@@ -1,0 +1,102 @@
+
+/*-----------------------------------------------------------------------------------
+
+	Shortcodes: partners.scss
+
+-----------------------------------------------------------------------------------*/
+
+/* ----------------------------------------------------------------
+	Partners logo Styles
+-----------------------------------------------------------------*/
+.logos {
+	// display: flex;
+	// justify-content: space-between;
+	
+	.logo-item {
+		border-radius: 0;
+		max-width: 10.625rem;
+		height: 6.25rem;
+		width: 100%;		
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: 1;
+	}
+
+} 
+
+.logo-brand {
+	font-family: $heading-font;
+	letter-spacing: 0.2rem;
+	color: #9e8edf;
+}
+// .logos {
+// 	position: absolute;
+// 	bottom: 1.5rem;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+
+// 	@include media-breakpoint-down(lg){
+// 		bottom:0.4rem;
+// 		padding: 0 1rem;
+// 	}
+
+// 	@include media-breakpoint-down(sm){
+// 		bottom:0.3rem !important;
+// 	}
+
+// 	.logo-items {
+// 		grid-gap:0.7rem;
+
+// 		img {
+// 			width: 60% !important;
+// 		}
+
+// 		.brands {
+// 			font-family: $heading-font;
+// 			color: #9e8edf;
+
+// 			.plus {
+// 				font-size:1.5rem;
+//     			font-weight: 900;
+// 			}
+
+// 			.number {
+// 				font-size: 2rem;
+// 				letter-spacing: 0.3rem;
+// 			}
+
+// 			@include media-breakpoint-down(md) {
+// 				.plus {
+// 					font-size: 1.2rem;
+// 				}
+	
+// 				.number {
+// 					font-size: 1.3rem;
+// 				}
+
+// 				.content {
+// 					padding: 0 0 0 0.5rem !important;
+//     				font-size: 0.6rem;
+// 				}
+// 			}
+
+// 			@include media-breakpoint-down(sm) {
+// 				.plus {
+// 					font-size: 0.7rem !important;
+// 				}
+	
+// 				.number {
+// 					font-size: 0.8rem !important;
+// 				}
+
+// 				.content {
+// 					font-size: 0.4rem;
+// 					padding: 0 0 0 0.3rem !important;
+// 				}
+// 			}
+
+// 		}
+// 	}
+// } 
