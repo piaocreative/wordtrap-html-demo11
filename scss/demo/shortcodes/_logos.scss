@@ -9,8 +9,10 @@
 	Partners logo Styles
 -----------------------------------------------------------------*/
 .logos {
-	// display: flex;
-	// justify-content: space-between;
+
+	@include media-breakpoint-down(md) {
+		gap: 0.75rem !important;
+	}
 	
 	.logo-item {
 		border-radius: 0;
@@ -21,6 +23,10 @@
 		align-items: center;
 		justify-content: center;
 		flex: 1;
+
+		img {
+			width: 4rem !important;
+		}
 	}
 
 } 
@@ -29,6 +35,24 @@
 	font-family: $heading-font;
 	letter-spacing: 0.2rem;
 	color: #9e8edf;
+
+	h3 {
+		font-size: 1.8rem;
+	}
+
+	span{
+		font-size: 0.8rem;
+	}
+
+	@include media-breakpoint-down(md) {
+		h3 {
+			font-size: 1.3rem;
+		}
+
+		span {
+			font-size: 0.6rem;
+		}
+	}
 }
 // .logos {
 // 	position: absolute;

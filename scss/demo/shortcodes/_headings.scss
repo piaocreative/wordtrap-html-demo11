@@ -53,6 +53,27 @@
 		left: 0;
 		right: 0;
 	}
+
+	@include media-breakpoint-down(lg) {
+		.title {
+			font-size: 8.375rem !important;
+		}
+
+		.sub-title {
+			font-size: 2.6rem !important;
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		.title {
+			font-size: 5.375rem !important;
+		}
+
+		.sub-title {
+			font-size: 1.8rem !important;
+		}
+	}
+
 	@include media-breakpoint-down(sm) {
 		.title {
 			font-size: 2.5rem !important;

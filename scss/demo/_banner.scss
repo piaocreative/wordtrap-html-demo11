@@ -39,16 +39,17 @@
         background-image: url(../images/banner/about-banner.png);         
         background-repeat: no-repeat;
         background-size: cover;       
-        background-position: -55rem;
+        background-position: 50%;
         height: auto;
         padding-top: 14.25rem;
         top: -$header-height;
         margin-bottom: -$header-height;
         padding-bottom: 11rem;
 
-        @media (min-width: 992px) {
-            background-size: cover;       
-            background-position: -20rem;
+        @include media-breakpoint-down(lg) {
+
+            background-position-y: 2rem; 
+            
         }
     }
 
@@ -56,7 +57,7 @@
         background-image: url(../images/banner/contact-banner.png);         
         background-repeat: no-repeat;
         background-size: cover;       
-        background-position: -55rem;
+        background-position: 50%;
         height: auto;
         padding-top: 14.25rem;
         top: -$header-height;

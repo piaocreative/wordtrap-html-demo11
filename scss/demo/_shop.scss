@@ -243,6 +243,10 @@
 	h2 {
 		font-size: 12.1875rem;
         letter-spacing: 0.7rem;
+
+		@include media-breakpoint-down(md) {
+			font-size: 9.875rem;
+		}
 	}
 
 	span {

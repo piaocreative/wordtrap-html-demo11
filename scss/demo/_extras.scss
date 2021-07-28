@@ -42,6 +42,10 @@ a {
 	}	
 }
 
+#subscribe-form {
+    width: 20%;
+}
+
 @include media-breakpoint-down(sm) {
     #subscribe-form {
         width: 50% !important;
@@ -149,6 +153,7 @@ a {
 
         .right {
             padding: 0 !important;
+            height: auto !important;
         }
     }
 
