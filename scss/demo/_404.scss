@@ -5,69 +5,32 @@
 -----------------------------------------------------------------*/
 
 
-.error-404 {
-
-    background: url("../images/404/error-bg.png");
-    background-size: 100% 100%;
+#error-404 {
+    background-image: url(../images/404/error-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     position: relative;
-    top: -4rem;
-    margin-bottom: -4rem !important;
 
-    .error-logo {
-
+    #error-logo {
         position: relative;
         
         p {
+            font-size: 1.3125rem;
             position: absolute;
-            bottom: 7rem;
-            left: 5rem;
-            color: $body-color;
-            font-size: 0.8rem;
+            bottom: 10rem;
+            left: 0;          
         }
-    }
-
-    @include media-breakpoint-down(lg) {
-        padding: 0 !important;
-
-        p {
-            padding: 0 !important;
-            position: relative !important;
-            left: 0 !important;
-            bottom: 0 !important;
-        }
-    }
-
-    @include media-breakpoint-down(md) {
-        padding: 0 !important;
-
-        p {
-            padding: 0 !important;
-        }
-    }
-    
+    }    
 }
 
 #error-sidebar {
-
-    padding: 13rem 0rem 0 17.5rem;
-
-    @include media-breakpoint-down(lg) {
-        padding: 2rem 8rem !important;
-    }
-
-
-    @include media-breakpoint-down(md) {
-        padding: 2rem 6rem !important;
-    }
-
     h5 {
-        font-size: 0.8rem;
-        margin-bottom: 1px;
-        letter-spacing: 0.1rem;
+        font-size: 1rem;
+        letter-spacing: 1px;
     }
 
     ul {
-
         li {
             border-bottom: 1px dotted #d1bfbb;
             list-style: none;
@@ -75,17 +38,14 @@
             a {                
                 color: $white;
                 display: inline-block;
-                font-family: $body-font;
-                font-size: 0.8rem;
                 font-weight: 300;
                 line-height: 1;
-                padding: 0.7rem 0.25rem;
-                text-decoration: none;
+                padding: 0.875rem 0;
 
-            }
-            a:hover {
-                color: $theme-color;
-            }
+                &:hover {
+                    color: $theme-color;
+                }
+            }            
         }
     }
 }

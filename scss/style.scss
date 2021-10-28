@@ -21,12 +21,11 @@
 
 
 // Core CSS
-// @import "demo/typography";
+@import "demo/typography";
 
 
 #demo11 {
    // Content Blocks
-   @import "demo/topbar";
    @import "demo/header";
    @import "demo/banner";
    @import "demo/blog";
@@ -65,6 +64,4 @@
 
    // Extras
    @import "demo/extras";
-
-
 }

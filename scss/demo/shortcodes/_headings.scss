@@ -14,36 +14,41 @@
 -----------------------------------------------------------------*/
 
 .heading-block { 
-	margin-bottom: 4.25rem; 
+	margin-bottom: 1.875rem; 
 	position: relative;
 
 	&.feture-title {
 		.title {
-
-			color: #f7f7f7 !important
-			
+			color: #f7f7f7			
 		}
 
 		.sub-title {
-			color: #2a2a2a !important;;
+			color: #2a2a2a;
 		}
 	}
 
 	.title {		
 		display: block;
-		font-family: $heading-font;
 		font-weight: 900;
 		line-height: 1;
 		margin-bottom: 0;
-		font-size: 9.375rem;
+		font-size: 3.75rem;		
 		letter-spacing: 1.5rem;
 		color: #2a2a2a;
+
+		@include media-breakpoint-up(lg) {
+			font-size: 9.375rem;
+		}
+
+		@include media-breakpoint-down(sm) {
+			font-size: 5.625rem;
+		}
 	}
 
 	.sub-title {		
 		display: block;
 		font-family: $heading-font;
-		font-size: 2.815rem;
+		font-size: 1.6875rem;
 		line-height: 1;
 		color: $white;
 		letter-spacing: 0.2rem;
@@ -52,38 +57,9 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-	}
 
-	@include media-breakpoint-down(lg) {
-		.title {
-			font-size: 8.375rem !important;
+		@include media-breakpoint-up(lg) {
+			font-size: 2.8125rem;
 		}
-
-		.sub-title {
-			font-size: 2.6rem !important;
-		}
-	}
-
-	@include media-breakpoint-down(md) {
-		.title {
-			font-size: 5.375rem !important;
-		}
-
-		.sub-title {
-			font-size: 1.8rem !important;
-		}
-	}
-
-	@include media-breakpoint-down(sm) {
-		.title {
-			font-size: 2.5rem !important;
-			letter-spacing: 1rem;
-		}
-
-		.sub-title {
-			font-size: 1rem !important;
-			letter-spacing: 0.15rem;
-		}
-	}
-	
+	}	
 }

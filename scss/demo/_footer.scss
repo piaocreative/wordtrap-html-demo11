@@ -15,18 +15,16 @@
 -----------------------------------------------------------------*/
 
 #footer {
-
 	position: relative;
-	font-size: $footer-size;
-
+	font-size: 0.9rem;
 }
 
 #footer-main {
-	padding: 3.8rem 6rem 3rem;
+	padding: 3.8rem 0 3rem;
+}
 
-	@include media-breakpoint-down(sm) {
-		padding: 3.8rem 3rem 3rem;
-	}
+#footer-bottom {
+	padding: 2.25rem 0 3.625rem;
 }
 
 #copyrights {

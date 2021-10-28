@@ -16,57 +16,21 @@
 -----------------------------------------------------------------*/
 
 
-#banner {
+.banner {
     position: relative;
-
-    @media (min-width: 1200px) {
-        height: 100%;
-    }
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
 
     .banner-wrap {
         padding-left: 4.375rem;
         padding-right: 4.375rem;
     }
 
-    &.about-banner {
-        background-image: url(../images/banner/about-banner.png);         
-        background-repeat: no-repeat;
-        background-size: cover;       
-        background-position: 50%;
-        height: auto;
-        padding-top: 14.25rem;
-        top: -$header-height;
-        margin-bottom: -$header-height;
-        padding-bottom: 11rem;
-
-        @include media-breakpoint-down(lg) {
-
-            background-position-y: 2rem; 
-            
-        }
+    &#about-banner {
+        padding-top: 7.375rem;
+        padding-bottom: 5.375rem;
     }
 
-    &.contact-banner {
-        background-image: url(../images/banner/contact-banner.png);         
-        background-repeat: no-repeat;
-        background-size: cover;       
-        background-position: 50%;
-        height: auto;
-        padding-top: 14.25rem;
-        top: -$header-height;
-        margin-bottom: -$header-height;
-        padding-bottom: 11rem;
-
-        @media (min-width: 992px) {
-            background-size: cover;       
-            background-position: -20rem;
-        }
+    &#contact-banner {
+        padding-top: 7.375rem;
+        padding-bottom: 5.375rem;
     }
 }

@@ -41,6 +41,13 @@ img {
 	}
 }
 
+// ---------Background-------------//
+.bg-cover {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 
 /* ----------------------------------------------------------------
 	Section
@@ -54,6 +61,12 @@ img {
 	@include media-breakpoint-down(md) {
 		padding-top: 2.5rem;
 		padding-bottom: 1rem;
+	}
+
+	@include media-breakpoint-down(lg) {
+		.border-start, .border-end, .border-top, .border-bottom {
+			border-width: 0 !important;
+		}
 	}
 }
 

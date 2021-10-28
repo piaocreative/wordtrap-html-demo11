@@ -39,16 +39,6 @@
 	}
 }
 
-#header-wrap {
-	padding-left: 4.375rem;
-	padding-right: 4.375rem;
-
-	@include media-breakpoint-down(sm) {
-		padding-left: 2.375rem;
-		padding-right: 2.375rem;
-	}
-}
-
 .nav {
 	flex-wrap: nowrap;
 }
@@ -57,12 +47,8 @@
 	border-radius: 0;
 }
 
-.navbar-collapse {
-	padding: 1rem 0;
-
-	@include media-breakpoint-up(lg) {
-		padding: 0;
-	}
+.navbar {
+	padding: 1.5rem 0;
 }
 
 
@@ -79,11 +65,9 @@
 	margin-right: 2.25rem;
 
 	img {
-		width: 60%;
-		height: auto;
+		max-width: 5.4375rem;
 	}
 }
-
 
 
 

@@ -12,93 +12,61 @@
 
 //-------------------- Base Colors --------------------//
 
-$theme-color:                   #76d2fb;
-$body-color:                    #fdfdfd;
-$heading-color:                 #000000;
+$theme-color:                #76d2fb;
+$body-color:                 #000000;
+$heading-color:              #000000;
 
 //-------------------- Redefine Bootstrap Variables ------------//
 
 // Theme Colors
 $primary:                       $theme-color;
 $secondary:                   #202020;
-$dark:                        rgb(0, 0, 0);
-
-//-------------------- Font Families --------------------//
-@font-face {
-    font-family: myFont;
-    src:url("./font/Anton-Regular.ttf");
-};
+$dark:                        #000000;
 
 //-------------------- Font Families --------------------//
 $body-font:                     'Open Sans', sans-serif;
-$heading-font:                  'myFont', serif;
+$heading-font:                  'Anton', sans-serif;
 
 
 // Font sizes
-$h1-font-size:                	4.375rem;
-$h1-about: 						          5.375rem;
-$h2-font-size:                	6.125rem;
-$h3-font-size:                	2.5rem;
+$h1-font-size:                	5.625rem;
+$h2-font-size:                  3.75rem;
+$h3-font-size:                	2.25rem;
 $h4-font-size:                	1.75rem;
 $h5-font-size:                	0.9rem;
-$h6-font-size:               	  0.75rem;
-$body-size:						          3vh;
-$side-bar-text:					        0.9rem;
-$no-p-r:						            0rem;
-$no-p-l:						            0rem;
-
-$button-radius:					        4rem;
-$footer-size:					          0.9rem;
-
-// space//
-$spacer: 1.5rem !default;
-
-$spacers:(
-  0: 0,
-  1: $spacer / 4,
-  2: $spacer / 2,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 2,
-  6: $spacer * 3,
-  7: $spacer * 4,
-  8: $spacer * 8,
-) !default;
-
-$container-max-widths: (
-  xl: 1000px,
-);
+$h6-font-size:               	0.75rem;
 
 
 //-------------------- Top Bar --------------------//
 
-$topbar-color:                  #ddcef5;
-$topbar-hover-color:            #ddcef5;
+$topbar-color:                #ddcef5;
+$topbar-hover-color:          #ddcef5;
 
 
 //-------------------- Header --------------------//
 
-$header-height:                 5.5rem;
+$header-height:                 6rem;
 
 // Sticky Header
-$sticky-header-height:          5.625rem;
+$sticky-header-height:          4.5rem;
 
 
 // top Button
-$top-btn-font-size:        		  1.25rem;
-$top-btn-font-color:       		#ffffff;
+$top-btn-font-size:        		1.25rem;
+$top-btn-font-color:       	  #ffffff;
 
 
 //-------------------- Section --------------------//
 
 $section-spacer:				5rem;
+$grid-gutter-width:             4.5rem;
 
 
 
 // Forms
 $input-color:                   $body-color;
-$input-border-color:            #dee8ec;
-$input-border-width:			      1px;
+$input-border-color:          #dee8ec;
+$input-border-width:			1px;
 $input-btn-focus-color-opacity: 1;
 
 $input-btn-padding-y:           0.875rem;
@@ -126,11 +94,11 @@ $input-font-weight:				300;
 $input-focus-box-shadow:		0 0 0 1px #e5e8e8;
 
 // Buttons
-$btn-font-family:               $body-font;
+$btn-font-family:               $heading-font;
 
 $btn-padding-y:                 1.03125rem;
 $btn-padding-x:                 3.25rem;
-$btn-font-size:                 1rem;
+$btn-font-size:                 0.9375rem;
 
 $btn-padding-y-sm:              0.75rem;
 $btn-padding-x-sm:              2.67rem;
@@ -140,7 +108,7 @@ $btn-padding-y-lg:              1.5rem;
 $btn-padding-x-lg:              5.33rem;
 $btn-font-size-lg:              1.17rem;
 
-$btn-font-weight:               300;
+$btn-font-weight:               400;
 $btn-line-height:               1;
 
 $btn-border-width:              1px;

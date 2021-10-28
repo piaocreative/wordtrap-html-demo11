@@ -11,13 +11,17 @@
 
 .post {
 	position: relative;
+	margin-bottom: 1.875rem;
 }
 
 .post-thumbnail {
 	display: block;
 	position: relative;
-	width: 100%;
-	height: auto;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
 
 	a {
 		display: block;
@@ -26,31 +30,33 @@
 }
 
 .post-content {
-
 	position: relative;
-	margin-bottom: 1.875rem;
 
 	.entry-title {
-        h5 {
-            font-family: $heading-font;
-			font-size: 1.3125rem;
-        }		
+		font-size: 1.3125rem;
+		color: $white;
 	}
 
 	.entry-content {
-		font-size: .85rem;
 		color: #c6c6c6;
-		line-height: 1.5rem;
+		line-height: 1.75;
 	}
-	
 }
 
-.post-date {
-
+.entry-meta {
+	font-family: $heading-font;
 	position: absolute;
-    top: 2rem;
+	color: #77b5ef;
+	font-size: 1.125rem;
+	top: 2rem;
+	z-index: 0;
 
-	.post-brand {
+	&:before {
+		content: "";
+		position: absolute;
+		top: -0.25rem;
+		z-index: -1;
+		display: inline-block;
 		-webkit-transform: rotate(180deg);
 		-ms-transform: rotate(180deg);
 		transform: rotate(180deg);
@@ -60,13 +66,6 @@
 		width: 7rem;
 		padding: .5rem 2.2rem;
 		border-bottom: 2.5rem solid #fff;
-	}
-
-	.date-title {
-		color: #77b5ef;
-		font-size: 1.125rem;
-		position: absolute;
-		top: 0.5rem;
 	}
 }
 

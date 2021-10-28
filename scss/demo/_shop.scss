@@ -70,7 +70,7 @@
 		color: #302f2d;
 		display: flex;
 		align-items: center;
-		font-family: $body-font;
+		font-family: $heading-font;
 		font-size: 1.875rem;
 		font-weight: 300;
 		line-height: 1;
@@ -88,7 +88,6 @@
 			color: #ff5a7d;
 			font-size: 1rem;
 			font-weight: 600;
-			text-decoration: none;
 		}
 	}
 
@@ -101,7 +100,6 @@
 
 		a {
 			color: $heading-color;
-			text-decoration: none;
 		}
 
 	}
@@ -147,7 +145,6 @@
 	
 	.add-to-cart,
 	.add-to-wishlist {
-
 		background-color: white;
 		display: inline-block;
 		color: #d5e0e8;
@@ -163,7 +160,6 @@
 			line-height: 1;
 		}
 	}
-
 
 	.onbest,
 	.ontop,
@@ -209,6 +205,17 @@
 		color: $white;
 	}
 
+	.product-thumbs {
+		margin-top: 2.5rem;
+		display: flex;
+
+		a {
+			display: block;
+			width: 4.375rem;
+			height: 4.375rem;
+		}
+	}
+
 	&:hover {
 		.product-btns {
 			opacity: 1;
@@ -228,12 +235,34 @@
 /* Ads
 -----------------------------------------------------------------*/
 .ads {
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	min-height: 36rem;
-	width: 100%;
 	position: relative;
+	display: block;
+
+	.ads-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+
+		.ads-bg-img {
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.ads-body {
+		position: relative;
+		z-index: 1;
+		padding: 7rem 0;
+	}
 
 	h4 {
 		letter-spacing: 0.15rem;
@@ -251,18 +280,5 @@
 
 	span {
 		line-height: 2rem;
-	}
-
-	.ads-content {
-		position: absolute;
-		top: 11rem;
-
-		&.ads-content-left {
-			left: 4.375rem;
-		}
-	
-		&.ads-content-right {
-			right: 4.375rem;
-		}
 	}
 }

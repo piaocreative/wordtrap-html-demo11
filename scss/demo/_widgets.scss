@@ -19,45 +19,39 @@
 .widget {
 	position: relative;
 
-	p {
-		font-family: 'Open Sans';
-		font-weight: 400;
-	}
-
-	a {
-		font-family: 'Open Sans';
-		font-weight: 400;
-	}
-
-	.widget-title {
-		color: #faf7fa;		
+	.widget-title {		
 		font-size: 0.875rem;
-		margin-bottom: 1.375rem;
-		font-family: 'Open Sans';
+		letter-spacing: 1px;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
 	}	
 
 	// Widget - Social
 	&.widget-social {
 		.social-icons {
-			
 			list-style: none;
 
 			li {
 				padding: 0 0.25rem;
+
+				&:first-child {
+					padding-left: 0;
+				}
 
 				&:last-child {
 					padding-right: 0;
 				}
 		
 				a {
-					background-color: #303135;					
+					background-color: #202020;					
 					color: $white;
 					display: inline-block;
-					line-height: 1.8125rem;
-					width: 1.8125rem;
-					height: 1.8125rem;		
+					line-height: 2.0625rem;
+					width: 2.0625rem;
+					height: 2.0625rem;		
 					vertical-align: middle;
 					text-align: center;
+
 					@include border-radius(50%);
 					@include transition(all 0.3s ease-in-out);
 		
@@ -68,7 +62,7 @@
 		
 					i {
 						vertical-align: top;
-						line-height: 1.8125rem;
+						line-height: 2.0625rem;
 					}
 				}
 			}
@@ -76,16 +70,12 @@
 	}
 
 
-
 	// Widget - Links
 	&.widget-links {
 		ul {
-			width: 50%;
-
 			li {
 				a {
 					color: #61605f;
-					font-size: 0.8rem;
 					text-decoration: none;
 					line-height: 1.875rem;		
 
@@ -97,29 +87,9 @@
 		}
 	}
 
-	@include media-breakpoint-down(md) {
-
-		&.widget-links {
-
-			.widget-content {
-				justify-content: space-between;
-			}
-
-			ul {
-				width: auto;
-				margin: auto;
-			}
-		}
-}
-
 	// Widget - Payments
-	&.widget-payment {
-
-		p {
-			letter-spacing: 0.1rem;
-		}
+	&.widget-payment {		
 		.payments {
-
 			.payment-icon {
 				display: inline-block;
 				vertical-align: middle;
@@ -159,15 +129,6 @@
 				color: #61605f;
 				display: block;
 				text-decoration: none;
-
-				&.h4 {
-					font-size: 1.5rem;
-					line-height: 1.25;
-				}
-
-				&.heading-font {
-					letter-spacing: 0.1rem
-				}
 			}
 		}
 	}
@@ -175,50 +136,13 @@
 	// Widget - Subscribe
 	&.widget-subscribe {
 		.widget-content {
-			p {
-				letter-spacing: 0.1rem
-			}
 			#widget-subscribe-form {
-				.form-control,
-
-				.btn {
+				.form-control, .btn {
 					@include border-radius(1.625rem);
 				}
 				
 				.input-group-append {
 					margin-left: -2.875rem;
-				}
-			}
-		}
-	}
-
-	// Widget - Products
-	&.widget-products {
-		.widget-content {
-			.product {
-				display: flex;
-				align-items: center;
-				margin-bottom: 0.625rem;
-
-				.product-image {
-					flex: 1;
-					height: 8.25rem;
-					max-width: 9.75rem;
-				}
-
-				.product-details {
-					flex: 1;
-					padding: 0 1.25rem;					
-				}
-
-				.product-price {					
-					margin-bottom: 0.625rem;
-				}
-
-				.product-title {
-					a {
-						color: $white;																		
-					}					
 				}
 			}
 		}
