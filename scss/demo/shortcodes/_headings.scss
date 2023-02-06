@@ -13,53 +13,49 @@
 /* Heading Block - with Subtitle
 -----------------------------------------------------------------*/
 
-.heading-block { 
-	margin-bottom: 1.875rem; 
+.heading-block {
+	margin-bottom: 1.875rem;
 	position: relative;
 
-	&.feture-title {
+	&.dark {
 		.title {
-			color: #f7f7f7			
-		}
-
-		.sub-title {
-			color: #2a2a2a;
+			span {
+				color: $headings-color;
+			}
 		}
 	}
 
-	.title {		
+	.title {
 		display: block;
 		font-weight: 900;
 		line-height: 1;
 		margin-bottom: 0;
-		font-size: 3.75rem;		
-		letter-spacing: 1.5rem;
-		color: #2a2a2a;
+		font-size: rfs-fluid-value(9.375rem);
+		letter-spacing: 0.2em;
+		color: rgba($light, 0.08);
+		position: relative;
 
 		@include media-breakpoint-up(lg) {
 			font-size: 9.375rem;
 		}
 
-		@include media-breakpoint-down(sm) {
-			font-size: 5.625rem;
+		span {
+			display: block;
+			font-family: $headings-font-family;
+			font-size: rfs-fluid-value(2.8125rem);
+			line-height: rfs-fluid-value(9.375rem);
+			color: $white;
+			letter-spacing: 0.075em;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+			@include media-breakpoint-up(lg) {
+				font-size: 2.8125rem;
+				line-height: 9.375rem;
+			}
 		}
 	}
-
-	.sub-title {		
-		display: block;
-		font-family: $heading-font;
-		font-size: 1.6875rem;
-		line-height: 1;
-		color: $white;
-		letter-spacing: 0.2rem;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-
-		@include media-breakpoint-up(lg) {
-			font-size: 2.8125rem;
-		}
-	}	
 }

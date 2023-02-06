@@ -9,13 +9,3 @@
 /* ----------------------------------------------------------------
 	Extra Styles
 -----------------------------------------------------------------*/
-.rain-text {
-    font-weight: 400;
-    letter-spacing: 0.2rem;
-
-    @include media-breakpoint-up(lg) {
-        white-space: nowrap;
-        position: relative;
-        left: -12rem;
-    }
-}

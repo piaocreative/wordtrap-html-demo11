@@ -20,17 +20,19 @@
 }
 
 #footer-main {
+	background-color: $black;
 	padding: 3.8rem 0 3rem;
 }
 
 #footer-bottom {
+	background-color: $dark;
 	padding: 2.25rem 0 3.625rem;
 }
 
 #copyrights {
-	color: #61605f;
+	color: $gray-600;
 	font-size: 0.875rem;
-	font-weight: 300;	
+	font-weight: 300;
 	line-height: 2;
-	z-index: 1;	
+	z-index: 1;
 }

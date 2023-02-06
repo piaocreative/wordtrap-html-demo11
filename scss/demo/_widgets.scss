@@ -19,12 +19,12 @@
 .widget {
 	position: relative;
 
-	.widget-title {		
+	.widget-title {
 		font-size: 0.875rem;
-		letter-spacing: 1px;
+		letter-spacing: 0.1em;
 		margin-bottom: 1rem;
 		text-transform: uppercase;
-	}	
+	}
 
 	// Widget - Social
 	&.widget-social {
@@ -41,25 +41,25 @@
 				&:last-child {
 					padding-right: 0;
 				}
-		
+
 				a {
-					background-color: #202020;					
+					background-color: $dark;
 					color: $white;
 					display: inline-block;
 					line-height: 2.0625rem;
 					width: 2.0625rem;
-					height: 2.0625rem;		
+					height: 2.0625rem;
 					vertical-align: middle;
 					text-align: center;
 
 					@include border-radius(50%);
 					@include transition(all 0.3s ease-in-out);
-		
+
 					&:hover {
 						background-color: $theme-color;
 						color: $white;
 					}
-		
+
 					i {
 						vertical-align: top;
 						line-height: 2.0625rem;
@@ -75,9 +75,9 @@
 		ul {
 			li {
 				a {
-					color: #61605f;
+					color: $gray-600;
 					text-decoration: none;
-					line-height: 1.875rem;		
+					line-height: 1.875rem;
 
 					&:hover {
 						color: $theme-color;
@@ -88,7 +88,7 @@
 	}
 
 	// Widget - Payments
-	&.widget-payment {		
+	&.widget-payment {
 		.payments {
 			.payment-icon {
 				display: inline-block;
@@ -126,7 +126,7 @@
 	&.widget-custom-html {
 		.widget-content {
 			p, a {
-				color: #61605f;
+				color: $gray-600;
 				display: block;
 				text-decoration: none;
 			}
@@ -140,9 +140,65 @@
 				.form-control, .btn {
 					@include border-radius(1.625rem);
 				}
-				
+
+				.form-control {
+					background-color: $black;
+				}
+
 				.input-group-append {
 					margin-left: -2.875rem;
+				}
+			}
+		}
+	}
+
+	// Widget - Latest Posts
+	&.widget-latest-posts {
+		.widget-content {
+			.entry-title {
+				h4 {
+					font-family: $body-font;
+					font-size: 1.1875rem;
+					line-height: 1.875rem;
+
+					a {
+						color: $headings-color;
+
+						&:hover {
+							color: $theme-color;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Widget - Latest Comments
+	&.widget-latest-comments {
+		.comment-author {
+			color: $headings-color;
+			font-weight: 600;
+
+			&:hover {
+				color: $theme-color;
+			}
+		}
+	}
+
+	// Widget - Search
+	&.widget-search {
+		.search-form {
+			.input-group {
+				.form-control {
+					border-radius: 1.375rem;
+				}
+
+				.btn {
+					position: absolute;
+					right: 1.5rem;
+					padding-left: 0;
+					padding-right: 0;
+					z-index: 4;
 				}
 			}
 		}

@@ -18,43 +18,107 @@
 
 
 #header {
-	position: relative;	
+	background-color: $blue;
+	position: relative;
 
 	// Transparent header
 	&.transparent-header {
-		background-color: #857db8;
+		background-color: $blue;
 		z-index: 199;
 
 		@include media-breakpoint-up(lg) {
 			background-color: transparent;
 
-			& + #content,
-			& + #contact-info,
-			& + #error-404 {
+			& + #content {
 				position: relative;
 				top: -$header-height;
 				margin-bottom: -$header-height;
 			}
-		}			
+		}
 	}
-}
 
-.nav {
-	flex-wrap: nowrap;
-}
+	#navbarCollapse {
+		background-color: $blue;
+		position: fixed;
+		left: 0;
+		top: 3.75rem;
+		width: 100%;
+		height: 100%;
+		padding: 8.125rem 1rem;
 
-.navbar-toggler {
-	border-radius: 0;
-}
+		@include media-breakpoint-down(lg) {
+			z-index: 1;
+		}
 
-.navbar {
-	padding: 1.5rem 0;
+		@include media-breakpoint-up(lg) {
+			left: 33.5%;
+			width: 33%;
+			top: 0;
+		}
+
+		@include transition(all .35s ease);
+
+		&.collapse {
+			&:not(.show) {
+				display: block;
+				top: -1000px;
+			}
+		}
+
+		&.collapsing {
+			top: -1000px;
+		}
+	}
+
+	.navbar {
+		@include media-breakpoint-down(lg) {
+			z-index: 2;
+		}
+	}
 }
 
 
 /* ----------------------------------------------------------------
-	Sticky Header
+	Navbar toggler
 -----------------------------------------------------------------*/
+
+.navbar-toggler {
+	border-radius: 0;
+	margin-left: 2.5rem;
+
+	&:focus {
+		@include box-shadow(none);
+	}
+}
+
+
+/* ----------------------------------------------------------------
+	Navbar
+-----------------------------------------------------------------*/
+
+.navbar {
+	&.navbar-dark {
+		.nav-link {
+			color: $white;
+
+			&:hover,
+			&:focus {
+				color: $theme-color;
+			}
+		}
+	}
+
+	&.navbar-light {
+		.nav-link {
+			color: $dark;
+
+			&:hover,
+			&:focus {
+				color: $theme-color;
+			}
+		}
+	}
+}
 
 
 /* ----------------------------------------------------------------
@@ -65,66 +129,123 @@
 	margin-right: 2.25rem;
 
 	img {
-		max-width: 5.4375rem;
+		max-width: 9.375rem;
 	}
 }
 
 
-
 /* ----------------------------------------------------------------
-	Mega Menu
+	Primary Menu
 -----------------------------------------------------------------*/
 
-// Please ignore mega menu now 
+#primary-menu {
+	text-align: center;
+
+	.nav-link {
+		color: $white;
+		font-family: $headings-font-family;
+		font-size: 1.875rem;
+		font-weight: 400;
+		line-height: 1;
+		padding: 1.125rem;
+
+		@include transition(all 0.5s ease-in-out);
+	}
+
+	.nav-item {
+		&.current {
+			& > a {
+				color: $theme-color;
+			}
+		}
+
+		& > .dropdown-menu {
+			background-color: transparent;
+			border: none;
+			border-radius: 0;
+			box-shadow: none;
+			text-align: center;
+
+			&[data-bs-popper] {
+				margin-top: 0;
+			}
+
+			@include media-breakpoint-up(lg) {
+				position: relative;
+				display: block;
+				top: -1000px;
+				opacity: 0;
+				height: 0;
+
+				@include transition(transform .5s ease-out);
+				@include translate3d(0, -20px, 0);
+			}
+
+			.nav-item {
+				& > .nav-link {
+					border: none;
+					font-family: $body-font;
+					font-size: 0.875rem;
+					font-weight: 100;
+					padding: 1rem 0;
+				}
+
+				&.current,
+				&:hover {
+					& > .nav-link {
+						color: $theme-color;
+					}
+				}
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			&.current,
+			&:hover {
+				.dropdown-menu {
+					top: auto;
+					opacity: 1;
+					height: auto;
+
+					@include translate3d(0, 0, 0);
+				}
+			}
+		}
+	}
+}
 
 
 /* ----------------------------------------------------------------
 	Top Buttons
 -----------------------------------------------------------------*/
 
-
 #top-btns {
-	padding-top: 1rem;
-
 	@include media-breakpoint-up(lg) {
-		padding-top: 0;
-	}
-	
-	.nav-item:not(:first-child) {
-		margin-left: 1.25rem;
+		margin-left: auto;
 	}
 
 	.nav-link {
-		color: $top-btn-font-color;	
-		font-size: $top-btn-font-size;	
-		line-height: 1;
-		padding: 0;
-
-		&:hover {
-			color: $link-hover-color;
-		}
-
 		[data-cart-items] {
 			position: relative;
 			display: inline-block;
-		}
-		
-		[data-cart-items]::before {
-			content: attr(data-cart-items);
-			position: absolute;
-			top: -.5rem;
-			right: -.75rem;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 19px;
-			height: 19px;
-			font-size: 11px;
-			font-weight: 500;
-			border-radius: 50%;
-			border: 1px solid #fff;
-			background-color: #ff6f61;
-			color: #fff;
+
+			&::before {
+				content: attr(data-cart-items);
+				position: absolute;
+				top: -.5rem;
+				right: -.75rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 19px;
+				height: 19px;
+				font-size: 11px;
+				font-weight: 500;
+				border-radius: 50%;
+				border: 1px solid #fff;
+				background-color: #ff6f61;
+				color: #fff;
+			}
 		}
 	}
 }
@@ -135,23 +256,17 @@
 -----------------------------------------------------------------*/
 
 #top-links {
-	.nav-item {			
+	.nav-item {
 		@include media-breakpoint-up(lg) {
-			padding-right: 1.875rem;		
+			padding-right: 1.875rem;
 		}
 	}
 
-	a.nav-link {
-		color: $top-btn-font-color;
-		display: block;
-		font-size: 0.75rem;	
-		
-		@include media-breakpoint-up(lg) {
-			padding: 0;		
-		}
+	.nav-link {
+		font-size: 0.75rem;
 
-		&:hover {
-			color: $topbar-hover-color;
+		@include media-breakpoint-up(lg) {
+			padding: 0;
 		}
 	}
 
@@ -166,9 +281,10 @@
 		border: 0;
 		top: 1.5rem;
 		left: 0;
-		width: 100%;		
+		width: 100%;
 		margin: 0;
 		border-top: 3px solid $link-hover-color;
+
 		@include border-radius(0);
 		@include box-shadow(0 0 5px -1px rgba($black, 0.2));
 
@@ -177,10 +293,10 @@
 		}
 
 		a.dropdown-item {
-			color: $heading-color;
+			color: $headings-color;
 			height: 2.25rem;
 			line-height: 2.25rem;
-			font-size: 0.75rem;				
+			font-size: 0.75rem;
 			padding: 0 0.75rem;
 
 			&:hover {
@@ -198,50 +314,3 @@
 		}
 	}
 }
-
-
-/* ----------------------------------------------------------------
-	Top Infos
------------------------------------------------------------------*/
-
-#top-infos {
-	display: flex;
-
-	.phone-number {
-		margin-right: 2.875rem;
-		
-		a {
-			color: $topbar-color;
-			margin-left: 1.75rem;
-
-			&:hover {
-				color: $topbar-hover-color;
-			}
-		}
-	}
-}
-
-
-/* ----------------------------------------------------------------
-	Top Login
------------------------------------------------------------------*/
-
-
-
-/* ----------------------------------------------------------------
-	Top Search
------------------------------------------------------------------*/
-
-
-
-
-/* ----------------------------------------------------------------
-	Top Cart
------------------------------------------------------------------*/
-
-
-
-
-/* ----------------------------------------------------------------
-	Top Account
------------------------------------------------------------------*/

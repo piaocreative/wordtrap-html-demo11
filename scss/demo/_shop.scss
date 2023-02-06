@@ -17,14 +17,15 @@
 
 /* Category
 -----------------------------------------------------------------*/
+
 .category {
-	position: relative;		
+	position: relative;
 	@include transition(all 0.5s ease-in-out);
 
 	.category-desc {
 		position: absolute;
 		left: 0;
-		bottom: 0;		
+		bottom: 0;
 		width: 100%;
 		z-index: 1;
 	}
@@ -33,12 +34,6 @@
 
 /* Product
 -----------------------------------------------------------------*/
-
-.products-title {
-    color: #343434;
-    font-size: 1.5rem;
-    font-family: myFont;
-}
 
 .product {
 	position: relative;
@@ -67,16 +62,16 @@
 
 	.product-price {
 		position: relative;
-		color: #302f2d;
+		color: $headings-color;
 		display: flex;
 		align-items: center;
-		font-family: $heading-font;
+		font-family: $headings-font-family;
 		font-size: 1.875rem;
 		font-weight: 300;
 		line-height: 1;
 
 		del {
-			color: #979797;
+			color: $light;
 			font-size: 1rem;
 			font-weight: 400;
 			margin-left: 1.375rem;
@@ -85,7 +80,7 @@
 
 	.product-categories {
 		a {
-			color: #ff5a7d;
+			color: $red;
 			font-size: 1rem;
 			font-weight: 600;
 		}
@@ -99,33 +94,31 @@
 		margin-bottom: 0.5rem;
 
 		a {
-			color: $heading-color;
+			color: $body-color;
 		}
 
 	}
 
 	.product-rating {
 		line-height: 1;
-		color: #979797;
+		color: $light;
 
 		i {
-			color: rgb(228, 174, 37);
+			color: $yellow;
 			font-size: 0.625rem;
 
 			&.empty {
-				color: rgba(rgb(228, 174, 37), 0.5);
+				color: rgba($yellow, 0.5);
 			}
 		}
 	}
 
 	.product-btns {
 		position: absolute;
-		right: 0;
-		top: 0;
-		grid-gap: 0.5rem;
-		padding: .875rem .375rem;
-		opacity: 0;
+		right: 1.875rem;
+		top: 1.875rem;
 		z-index: 2;
+
 		@include transition(all 0.3s ease-in-out);
 	}
 
@@ -137,19 +130,16 @@
 		border-left: 1rem solid transparent;
 		border-right: 0 solid transparent;
 		padding: .5rem 2.2rem;
-		border-bottom: 2.5rem solid #dd4545;
+		border-bottom: 2.5rem solid $red;
 		position: absolute;
 		top: 0.3rem;
 		z-index: -1;
 	}
-	
+
 	.add-to-cart,
 	.add-to-wishlist {
-		background-color: white;
-		display: inline-block;
-		color: #d5e0e8;
-		padding: 0.5rem;
-		@include transition(all 0.3s ease-in-out);		
+		display: block;
+		text-align: right;
 
 		&:hover {
 			color: $theme-color;
@@ -161,48 +151,13 @@
 		}
 	}
 
-	.onbest,
-	.ontop,
-	.onnew,
-	.onhot,
-	.onsale {
-		font-family: "Roboto Slab",serif;
-		font-size: .8rem;
-		line-height: 1;
-		font-weight: 500;
-		letter-spacing: .5px;
-		text-transform: uppercase;
-		padding: .65rem .9rem;
-		position: absolute;
-		left: 1rem;
-		top: 1rem;
-		z-index: 2;
-		border-radius: 1.875rem;
+	.add-to-cart {
+		color: $dark;
+		margin-bottom: 0.9375rem;
 	}
 
-	.onhot {
-		background-color: #ff3263;
-		color: $white;
-	}
-
-	.onnew {
-		background-color: #19d678;
-		color: $white;
-	}
-
-    .onbest {
-		background-color: #8b5ec7;
-		color: $white;
-	}
-
-	.ontop {
-		background-color: #5adbde;
-		color: $white;
-	}
-
-	.onsale {
-		background-color: #ffc83a;
-		color: $white;
+	.add-to-wishlist {
+		color: #d5e0e8;
 	}
 
 	.product-thumbs {
@@ -217,10 +172,6 @@
 	}
 
 	&:hover {
-		.product-btns {
-			opacity: 1;
-		}
-
 		.product-image {
 			> a:nth-of-type(2) {
 				z-index: 1;
@@ -229,7 +180,6 @@
 		}
 	}
 }
-
 
 
 /* Ads
@@ -265,20 +215,231 @@
 	}
 
 	h4 {
-		letter-spacing: 0.15rem;
+		letter-spacing: 0.075em;
 		font-size: 2.815rem;
 	}
 
 	h2 {
-		font-size: 12.1875rem;
-        letter-spacing: 0.7rem;
+		font-size: rfs-fluid-value(12.1875rem);
+        letter-spacing: 0.075em;
 
-		@include media-breakpoint-down(md) {
-			font-size: 9.875rem;
+		@include media-breakpoint-up(lp) {
+			font-size: 12.1875rem;
 		}
 	}
 
 	span {
 		line-height: 2rem;
+	}
+}
+
+
+/* ----------------------------------------------------------------
+	Product Filters
+-----------------------------------------------------------------*/
+
+.product-filters {
+	.filter-title {
+		color: $headings-color;
+		font-size: .875rem;
+		font-family: $body-font;
+		font-weight: 600;
+		line-height: 1;
+		margin-bottom: 0.75rem;
+	}
+
+	ul li ul {
+		padding-left: 2.25rem;
+	}
+
+	.product-filter-color {
+		ul li {
+			display: inline-block;
+			margin-right: 5px;
+
+			.filter-color {
+				width: 1.875rem;
+				height: 1.875rem;
+				margin: 0;
+				border: none;
+
+				&:checked::after {
+					top: 8px;
+					left: 12px;
+					width: 6px;
+					height: 10px;
+				}
+
+				&#color_ffffff {
+					border: 1px solid #dcdcdc;
+
+					&:checked::after {
+						border-color: #373737;
+					}
+				}
+			}
+		}
+	}
+
+	.product-filter-size {
+		ul li {
+			display: inline-block;
+			position: relative;
+			margin-right: 5px;
+
+			.filter-size {
+				width: 3.125rem;
+				height: 2.5rem;
+				margin: 0;
+				border: none;
+
+				& + label {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					z-index: 1;
+
+					@include translate3d(-50%, -50%, 0);
+				}
+
+				&:checked {
+					background-color: $theme-color;
+					color: $white;
+
+					& + label {
+						color: $white;
+					}
+
+					&::after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/* ----------------------------------------------------------------
+	Reviews
+-----------------------------------------------------------------*/
+
+#reviews {
+	#comments {
+		.reviews-title {
+			font-size: 1.125rem;
+
+			span {
+				color: $body-color;
+				font-family: $body-font;
+				font-size: 0.875rem;
+				font-weight: 400;
+				margin-left: 0.625rem;
+			}
+		}
+
+		ul.comment-list {
+			.review {
+				margin-bottom: 1.125rem;
+
+				.comment-container {
+					display: flex;
+
+					.comment-text {
+						margin-left: 1.125rem;
+						padding-top: 0.3125rem;
+
+						.meta {
+							line-height: 1;
+							margin-bottom: 0;
+
+							.review-date {
+								margin-left: 0.5rem;
+							}
+						}
+
+						.description {
+							p {
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
+
+				.rating {
+					.star-rating {
+						i {
+							color: $yellow;
+							font-size: 0.75rem;
+						}
+					}
+
+					.rating-text {
+						color: $headings-color;
+						font-size: 0.75rem;
+					}
+				}
+			}
+		}
+	}
+
+	#review_form {
+		margin-top: 2.25rem;
+		padding: 1.875rem 0;
+
+		@include border-radius(0.5rem);
+
+		.comment-respond {
+			.comment-form {
+				margin-bottom: 0;
+			}
+		}
+
+		.stars {
+			i {
+				color: $yellow;
+			}
+		}
+	}
+}
+
+
+/* ----------------------------------------------------------------
+	Shop Table
+-----------------------------------------------------------------*/
+
+.shop-table {
+	td, th {
+		padding: 1rem;
+	}
+
+	thead {
+		tr {
+			th {
+				border: none;
+				font-weight: 600;
+				font-size: 0.75rem;
+				line-height: 1;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	tbody {
+		tr {
+			td {
+				border-bottom-width: 5px;
+				border-color: transparent;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	& > :not(:last-child) > :last-child > * {
+		border-bottom-color: transparent;
+	}
+
+	& > :not(caption) > * > * {
+		border-bottom-width: 0;
 	}
 }
